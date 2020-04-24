@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class Server extends Thread {
-    static ArrayList<Client> clients = new ArrayList<>();
+    public static ArrayList<Client> clients = new ArrayList<>();
     private int nbrClient;
 
     public Server() {

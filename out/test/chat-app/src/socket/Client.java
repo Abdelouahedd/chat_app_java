@@ -15,13 +15,18 @@ public class Client extends Thread {
         this.numero = numero;
     }
 
+    public int getNumero() {
+        return numero;
+    }
 
-    public void broadCastMessage(String msg, Socket socket) {
+    public void broadCastMessage(String msg, Socket socket, int id) {
         try {
             for (Client client : Server.clients) {
                 if (client.socketClient != socket) {
-                    PrintWriter writer = new PrintWriter(client.socketClient.getOutputStream(), true);
-                    writer.println(msg);
+                    if (client.numero == id || id == - 1) {
+                        PrintWriter writer = new PrintWriter(client.socketClient.getOutputStream(), true);
+                        writer.println(msg);
+                    }
                 }
             }
         } catch (IOException e) {
@@ -38,7 +43,14 @@ public class Client extends Thread {
             writer.println("Bien venu vous etes le client " + numero + " IP =" + socketClient.getRemoteSocketAddress());
             while (true) {
                 String req = br.readLine();
-                broadCastMessage(req, socketClient);
+                if (req.contains("->")) {
+                    String[] params = req.split("->");
+                    int id = Integer.parseInt(params[0]);
+                    String msg = params[1];
+                    broadCastMessage(msg, socketClient, id);
+                } else {
+                    broadCastMessage(req, socketClient, - 1);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();

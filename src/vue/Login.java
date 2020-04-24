@@ -9,6 +9,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.net.Socket;
+
 public class Login extends Stage {
     private BorderPane root;
     private VBox vBox;
@@ -45,7 +48,13 @@ public class Login extends Stage {
     private void handleEvent() {
         cnx.setOnAction(actionEvent -> {
             System.out.println("click");
-            new RoomChat();
+            Socket socketClient = null;
+            try {
+                socketClient = new Socket(host.getText(), Integer.parseInt(port.getText()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            new RoomChat(socketClient);
             this.close();
         });
     }

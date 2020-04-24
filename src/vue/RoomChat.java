@@ -1,5 +1,8 @@
 package vue;
 
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,57 +12,57 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+
 public class RoomChat extends Stage {
+    PrintWriter writer;
+    BufferedReader br;
+    private Socket socketClient;
     private BorderPane pane;
-    private ListView messages;
-    private ListView users;
+    private ListView<String> messages;
     private TextField msg;
-    private Text text;
+
     private Button sendMdg;
     private VBox vBox;
-    private VBox lisUsers;
-    private HBox hBox;
 
-    public RoomChat() {
+    private HBox hBox;
+    private ObservableList<String> messageList = FXCollections.observableArrayList();
+
+    public RoomChat(Socket socket) {
+        this.socketClient = socket;
         initCompenet();
         fixStyle();
+        envoyer();
+        chat();
         pane.setCenter(vBox);
-        pane.setLeft(lisUsers);
-        this.setScene(new Scene(pane, 800, 500));
+        this.setScene(new Scene(pane, 500, 500));
         this.show();
         this.setTitle("Chat application ");
     }
 
     private void initCompenet() {
         pane = new BorderPane();
-        messages = new ListView();
-        users = new ListView();
+        messages = new ListView(messageList);
         msg = new TextField();
-        text = new Text("List of USERS");
         sendMdg = new Button("Send Message");
         vBox = new VBox();
-        lisUsers = new VBox();
         hBox = new HBox();
     }
 
     private void fixStyle() {
-        messages.setPrefSize(350, 300);
-        users.setPrefSize(200, 400);
-        msg.setPrefSize(220,10);
-        listUsers();
+        messages.setPrefSize(250, 250);
+        msg.setPrefSize(220, 10);
         body();
         fiwRoom();
         addCHildren();
     }
 
-    private void listUsers() {
-        lisUsers.setPadding(new Insets(10, 5, 2, 6));
-        lisUsers.setSpacing(8);
-        lisUsers.setAlignment(Pos.CENTER);
-    }
 
     private void body() {
         vBox.setPadding(new Insets(40));
@@ -76,7 +79,31 @@ public class RoomChat extends Stage {
     private void addCHildren() {
         hBox.getChildren().addAll(msg, sendMdg);
         vBox.getChildren().addAll(messages, hBox);
-        lisUsers.getChildren().addAll(text, users);
+    }
+
+    private void envoyer() {
+        sendMdg.setOnAction((actionEvent -> {
+            writer.println(msg.getText());
+        }));
+    }
+
+    void chat() {
+        try {
+            br = new BufferedReader(new InputStreamReader(socketClient.getInputStream()));
+            writer = new PrintWriter(socketClient.getOutputStream(), true);
+            new Thread(() -> {
+                while (true) {
+                    try {
+                        String resp = br.readLine();
+                        Platform.runLater(() -> messageList.add(resp));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
