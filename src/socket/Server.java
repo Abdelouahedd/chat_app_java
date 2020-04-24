@@ -24,13 +24,17 @@ public class Server extends Thread {
             ServerSocket serverSocket = new ServerSocket(1234);
             while (true) {
                 Socket socket = serverSocket.accept();
-                ++ nbrClient;
-                Client client = new Client(socket, nbrClient);
-                clients.add(client);
-                client.start();
+                createThredClient(socket);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void createThredClient(Socket socket) {
+        ++ nbrClient;
+        Client client = new Client(socket, nbrClient);
+        clients.add(client);
+        client.start();
     }
 }

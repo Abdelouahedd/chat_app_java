@@ -84,6 +84,7 @@ public class RoomChat extends Stage {
     private void envoyer() {
         sendMdg.setOnAction((actionEvent -> {
             writer.println(msg.getText());
+            msg.clear();
         }));
     }
 
