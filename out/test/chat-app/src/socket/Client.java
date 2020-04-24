@@ -7,8 +7,8 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class Client extends Thread {
-    Socket socketClient;
-    int numero;
+    private Socket socketClient;
+    private int numero;
 
     public Client(Socket socket, int numero) {
         this.socketClient = socket;
@@ -33,10 +33,8 @@ public class Client extends Thread {
 
     @Override
     public void run() {
-        try (
-                BufferedReader br = new BufferedReader(new InputStreamReader(socketClient.getInputStream()));
-                PrintWriter writer = new PrintWriter(socketClient.getOutputStream(), true)) {
-
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(socketClient.getInputStream()));
+             PrintWriter writer = new PrintWriter(socketClient.getOutputStream(), true)) {
             writer.println("Bien venu vous etes le client " + numero + " IP =" + socketClient.getRemoteSocketAddress());
             while (true) {
                 String req = br.readLine();
