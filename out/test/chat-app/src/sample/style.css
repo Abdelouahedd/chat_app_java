@@ -1,0 +1,6 @@
+.field{
+    -fx-border-style: dashed;
+    -fx-border-color: red;
+    -fx-border-radius: 10;
+
+}
