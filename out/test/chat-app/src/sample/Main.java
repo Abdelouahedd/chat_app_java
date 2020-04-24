@@ -1,9 +1,9 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import vue.Login;
+import vue.RoomChat;
 
 
 public class Main extends Application {
@@ -14,7 +14,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        new Login();
+        new RoomChat();
     }
 
 

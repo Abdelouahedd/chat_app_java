@@ -24,7 +24,7 @@ public class Login extends Stage {
         root.setCenter(vBox);
         this.setScene(new Scene(root, 300, 300));
         this.show();
-        this.setTitle("Chat application ");
+        this.setTitle("Login");
     }
 
     private void fixChildrenVBox() {
@@ -45,8 +45,8 @@ public class Login extends Stage {
     private void handleEvent() {
         cnx.setOnAction(actionEvent -> {
             System.out.println("click");
+            new RoomChat();
             this.close();
-            //lanch stage new RoomChat();
         });
     }
 

@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/vue/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vue/RoomChat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/socket/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/socket/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/socket/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/socket/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/RoomChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/RoomChat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +241,7 @@
       <workItem from="1587491171604" duration="1072000" />
       <workItem from="1587577292780" duration="4090000" />
       <workItem from="1587581452381" duration="14889000" />
-      <workItem from="1587689646793" duration="11035000" />
+      <workItem from="1587689646793" duration="13714000" />
     </task>
     <servers />
   </component>
@@ -267,10 +265,10 @@
       <screen x="0" y="27" width="1366" height="708" />
     </state>
     <state x="466" y="89" width="424" height="591" key="#com.intellij.ide.macro.MacrosDialog/0.27.1366.708@0.27.1366.708" timestamp="1587583172967" />
-    <state x="491" y="100" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1587700308253">
+    <state x="491" y="100" width="539" height="583" key="#com.intellij.ide.util.MemberChooser" timestamp="1587702197321">
       <screen x="0" y="27" width="1366" height="708" />
     </state>
-    <state x="491" y="100" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1366.708@0.27.1366.708" timestamp="1587700308253" />
+    <state x="491" y="100" width="539" height="583" key="#com.intellij.ide.util.MemberChooser/0.27.1366.708@0.27.1366.708" timestamp="1587702197321" />
     <state x="563" y="136" width="324" height="497" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1587586729084">
       <screen x="0" y="27" width="1366" height="708" />
     </state>
@@ -287,22 +285,22 @@
       <screen x="0" y="27" width="1366" height="708" />
     </state>
     <state x="331" y="127" width="719" height="577" key="FileChooserDialogImpl/0.27.1366.708@0.27.1366.708" timestamp="1587587742028" />
-    <state width="1320" height="168" key="GridCell.Tab.0.bottom" timestamp="1587701797193">
+    <state width="1320" height="202" key="GridCell.Tab.0.bottom" timestamp="1587705185948">
       <screen x="0" y="27" width="1366" height="708" />
     </state>
-    <state width="1320" height="168" key="GridCell.Tab.0.bottom/0.27.1366.708@0.27.1366.708" timestamp="1587701797193" />
-    <state width="1320" height="168" key="GridCell.Tab.0.center" timestamp="1587701797192">
+    <state width="1320" height="202" key="GridCell.Tab.0.bottom/0.27.1366.708@0.27.1366.708" timestamp="1587705185948" />
+    <state width="1320" height="202" key="GridCell.Tab.0.center" timestamp="1587705185946">
       <screen x="0" y="27" width="1366" height="708" />
     </state>
-    <state width="1320" height="168" key="GridCell.Tab.0.center/0.27.1366.708@0.27.1366.708" timestamp="1587701797192" />
-    <state width="1320" height="168" key="GridCell.Tab.0.left" timestamp="1587701797192">
+    <state width="1320" height="202" key="GridCell.Tab.0.center/0.27.1366.708@0.27.1366.708" timestamp="1587705185946" />
+    <state width="1320" height="202" key="GridCell.Tab.0.left" timestamp="1587705185945">
       <screen x="0" y="27" width="1366" height="708" />
     </state>
-    <state width="1320" height="168" key="GridCell.Tab.0.left/0.27.1366.708@0.27.1366.708" timestamp="1587701797192" />
-    <state width="1320" height="168" key="GridCell.Tab.0.right" timestamp="1587701797193">
+    <state width="1320" height="202" key="GridCell.Tab.0.left/0.27.1366.708@0.27.1366.708" timestamp="1587705185945" />
+    <state width="1320" height="202" key="GridCell.Tab.0.right" timestamp="1587705185947">
       <screen x="0" y="27" width="1366" height="708" />
     </state>
-    <state width="1320" height="168" key="GridCell.Tab.0.right/0.27.1366.708@0.27.1366.708" timestamp="1587701797193" />
+    <state width="1320" height="202" key="GridCell.Tab.0.right/0.27.1366.708@0.27.1366.708" timestamp="1587705185947" />
     <state width="1320" height="327" key="GridCell.Tab.1.bottom" timestamp="1587697071694">
       <screen x="0" y="27" width="1366" height="708" />
     </state>
@@ -331,10 +329,10 @@
       <screen x="0" y="27" width="1366" height="708" />
     </state>
     <state x="368" y="279" width="645" height="216" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.27.1366.708@0.27.1366.708" timestamp="1587581987028" />
-    <state x="416" y="135" width="524" height="499" key="extract.method.dialog" timestamp="1587701093202">
+    <state x="416" y="135" width="524" height="499" key="extract.method.dialog" timestamp="1587705068897">
       <screen x="0" y="27" width="1366" height="708" />
     </state>
-    <state x="416" y="135" width="524" height="499" key="extract.method.dialog/0.27.1366.708@0.27.1366.708" timestamp="1587701093202" />
+    <state x="416" y="135" width="524" height="499" key="extract.method.dialog/0.27.1366.708@0.27.1366.708" timestamp="1587705068897" />
     <state x="4" y="27" width="1347" height="708" key="new project wizard" timestamp="1587579764530">
       <screen x="0" y="27" width="1366" height="708" />
     </state>
